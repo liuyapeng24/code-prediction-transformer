@@ -44,7 +44,7 @@ def gelu(x):
         * (1 + torch.tanh(math.sqrt(2 / math.pi) * (x + 0.044715 * torch.pow(x, 3))))
     )
 
-
+# path encoder
 class PathLSTM(nn.Module):
     def __init__(self, vocab_size, n_embd):
         super(PathLSTM, self).__init__()
@@ -166,7 +166,7 @@ class Block(nn.Module):
         x = x + m
         return x
 
-
+# base model
 class GPT2Model(nn.Module):
     def __init__(
         self,
